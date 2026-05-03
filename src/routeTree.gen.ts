@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as GalerieRouteImport } from './routes/galerie'
@@ -27,6 +29,16 @@ import { Route as LeistungenAchsvermessungRouteImport } from './routes/leistunge
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontaktRoute = KontaktRouteImport.update({
@@ -104,6 +116,8 @@ export interface FileRoutesByFullPath {
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
   '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
@@ -120,6 +134,8 @@ export interface FileRoutesByTo {
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
   '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
@@ -137,6 +153,8 @@ export interface FileRoutesById {
   '/galerie': typeof GalerieRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
   '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
@@ -155,6 +173,8 @@ export interface FileRouteTypes {
     | '/galerie'
     | '/impressum'
     | '/kontakt'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/ueber-uns'
     | '/leistungen/achsvermessung'
     | '/leistungen/bremsenservice'
@@ -171,6 +191,8 @@ export interface FileRouteTypes {
     | '/galerie'
     | '/impressum'
     | '/kontakt'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/ueber-uns'
     | '/leistungen/achsvermessung'
     | '/leistungen/bremsenservice'
@@ -187,6 +209,8 @@ export interface FileRouteTypes {
     | '/galerie'
     | '/impressum'
     | '/kontakt'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/ueber-uns'
     | '/leistungen/achsvermessung'
     | '/leistungen/bremsenservice'
@@ -204,6 +228,8 @@ export interface RootRouteChildren {
   GalerieRoute: typeof GalerieRoute
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UeberUnsRoute: typeof UeberUnsRoute
   LeistungenAchsvermessungRoute: typeof LeistungenAchsvermessungRoute
   LeistungenBremsenserviceRoute: typeof LeistungenBremsenserviceRoute
@@ -222,6 +248,20 @@ declare module '@tanstack/react-router' {
       path: '/ueber-uns'
       fullPath: '/ueber-uns'
       preLoaderRoute: typeof UeberUnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontakt': {
@@ -324,6 +364,8 @@ const rootRouteChildren: RootRouteChildren = {
   GalerieRoute: GalerieRoute,
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UeberUnsRoute: UeberUnsRoute,
   LeistungenAchsvermessungRoute: LeistungenAchsvermessungRoute,
   LeistungenBremsenserviceRoute: LeistungenBremsenserviceRoute,
