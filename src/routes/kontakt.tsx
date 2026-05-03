@@ -69,7 +69,7 @@ function KontaktPage() {
 
       <div className="grid gap-10 lg:grid-cols-2">
         {/* FORM */}
-        <form onSubmit={handleSubmit} className="rounded-xl border bg-card p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="rounded-sm border bg-card p-5 space-y-4">
           <div>
             <Label htmlFor="name">Name *</Label>
             <Input id="name" name="name" required maxLength={100} className="mt-1" />
@@ -89,7 +89,7 @@ function KontaktPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-md bg-red-accent px-6 py-3 font-semibold text-red-accent-foreground hover:opacity-90 disabled:opacity-60"
+            className="w-full rounded-sm bg-red-accent px-6 py-3 font-semibold text-red-accent-foreground hover:opacity-90 disabled:opacity-60"
           >
             {submitting ? "Wird gesendet…" : "Senden"}
           </button>
@@ -97,7 +97,7 @@ function KontaktPage() {
 
         {/* CONTACT INFO */}
         <div className="space-y-4">
-          <div className="rounded-xl border bg-card p-6 space-y-4">
+          <div className="rounded-sm border bg-card p-5 space-y-3">
             <p className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-red-accent mt-0.5" />
               <span>
@@ -106,7 +106,7 @@ function KontaktPage() {
             </p>
             <a
               href={CONTACT.phoneHref}
-              className="flex items-center justify-center gap-2 rounded-md bg-red-accent px-6 py-4 text-lg font-bold text-red-accent-foreground hover:opacity-90"
+              className="flex items-center justify-center gap-2 rounded-sm bg-red-accent px-6 py-3 text-lg font-bold text-red-accent-foreground hover:opacity-90"
             >
               <Phone className="h-5 w-5" /> {CONTACT.phoneDisplay}
             </a>
@@ -116,20 +116,12 @@ function KontaktPage() {
             >
               <Mail className="h-5 w-5 text-red-accent" /> {CONTACT.emailDisplay}
             </a>
-            <a
-              href={CONTACT.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-md bg-whatsapp px-6 py-3 font-semibold text-white hover:opacity-90"
-            >
-              <MessageCircle className="h-5 w-5" /> WhatsApp schreiben
-            </a>
             <p className="flex items-center gap-3 text-sm text-muted-foreground">
               <Clock className="h-5 w-5 text-red-accent" /> {CONTACT.hours}
             </p>
           </div>
 
-          <div className="rounded-xl overflow-hidden border">
+          <div className="rounded-sm overflow-hidden border">
             <iframe
               title="Karte zur Werkstatt"
               src="https://www.google.com/maps?q=Ordensmeisterstra%C3%9Fe+35,+12099+Berlin&output=embed"
@@ -141,11 +133,23 @@ function KontaktPage() {
             />
           </div>
 
+          <p className="text-sm">
+            Sie erreichen uns auch per WhatsApp: <strong>{CONTACT.whatsappDisplay}</strong>
+          </p>
+          <a
+            href={CONTACT.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-sm bg-whatsapp px-6 py-3 font-semibold text-white hover:opacity-90"
+          >
+            <MessageCircle className="h-5 w-5" /> WhatsApp schreiben
+          </a>
+
           <a
             href={CONTACT.mapsLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-md border-2 border-dark px-6 py-3 font-semibold hover:bg-dark hover:text-dark-foreground transition"
+            className="flex items-center justify-center gap-2 rounded-sm border-2 border-dark px-6 py-3 font-semibold hover:bg-dark hover:text-dark-foreground transition"
           >
             <Map className="h-5 w-5" /> Route berechnen
           </a>

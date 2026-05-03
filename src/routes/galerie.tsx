@@ -21,28 +21,31 @@ export const Route = createFileRoute("/galerie")({
 
 function GaleriePage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">Unsere Werkstatt – Einblicke</h1>
-      <p className="text-muted-foreground mb-10 max-w-2xl">
-        Fotos aus unserer Meisterwerkstatt in Berlin-Tempelhof folgen in Kürze.
+    <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
+      <h1 className="text-2xl md:text-3xl font-bold mb-3 border-b-2 border-red-accent pb-2">
+        Unsere Werkstatt – Einblicke
+      </h1>
+      <p className="text-muted-foreground mb-2 max-w-2xl">
+        Fotos aus unserer Meisterwerkstatt in Berlin-Tempelhof.
       </p>
+      <p className="text-sm font-medium mb-6">Weitere Fotos folgen in Kürze.</p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="aspect-[4/3] rounded-lg bg-grey-light border flex flex-col items-center justify-center text-muted-foreground"
+            className="aspect-[4/3] rounded-sm border-2 border-dashed border-border bg-grey-light flex flex-col items-center justify-center text-muted-foreground"
           >
-            <Camera className="h-8 w-8 mb-2" />
-            <span className="text-sm font-medium">Foto folgt</span>
+            <Camera className="h-6 w-6 mb-1.5 opacity-60" />
+            <span className="text-xs font-medium">Foto wird ergänzt</span>
           </div>
         ))}
       </div>
 
-      <div className="mt-12">
+      <div className="mt-10">
         <Link
           to="/kontakt"
-          className="inline-flex items-center gap-2 rounded-md bg-red-accent px-6 py-3 font-semibold text-red-accent-foreground hover:opacity-90"
+          className="inline-flex items-center gap-2 rounded-sm bg-red-accent px-5 py-2.5 font-semibold text-red-accent-foreground hover:opacity-90"
         >
           Jetzt Termin anfragen
         </Link>

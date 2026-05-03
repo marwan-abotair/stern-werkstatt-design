@@ -24,6 +24,13 @@ export const Route = createFileRoute("/leistungen/unfallreparatur")({
         "Glasarbeiten und Scheibentausch",
         "Komplette Versicherungsabwicklung auf Wunsch",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Schadensaufnahme & Kostenvoranschlag", price: "kostenlos" },
+        { label: "Lackierung Einzelteil", price: "auf Anfrage" },
+        { label: "Karosseriearbeiten", price: "auf Anfrage" },
+        { label: "Versicherungsabwicklung", price: "inklusive" },
+      ]}
     />
   ),
 });

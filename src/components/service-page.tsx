@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Check, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { PriceTable, type PriceRow } from "@/components/price-table";
 import { CONTACT } from "@/lib/contact";
 
 export interface ServicePageProps {
@@ -8,11 +9,12 @@ export interface ServicePageProps {
   serviceName: string;
   paragraphs: string[];
   included: string[];
+  prices?: PriceRow[];
 }
 
-export function ServicePage({ h1, serviceName, paragraphs, included }: ServicePageProps) {
+export function ServicePage({ h1, serviceName, paragraphs, included, prices }: ServicePageProps) {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 md:py-14">
+    <div className="mx-auto max-w-4xl px-4 py-8 md:py-12">
       <Breadcrumbs
         items={[
           { label: "Startseite", to: "/" },
@@ -20,45 +22,49 @@ export function ServicePage({ h1, serviceName, paragraphs, included }: ServicePa
           { label: serviceName },
         ]}
       />
-      <h1 className="text-3xl md:text-4xl font-bold mb-6">{h1}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-5 border-b-2 border-red-accent pb-2">
+        {h1}
+      </h1>
 
-      <div className="prose prose-neutral max-w-none mb-8 space-y-4 text-foreground">
+      <div className="mb-6 space-y-3 text-foreground">
         {paragraphs.map((p, i) => (
-          <p key={i} className="leading-relaxed text-base md:text-lg text-muted-foreground">
+          <p key={i} className="leading-relaxed">
             {p}
           </p>
         ))}
       </div>
 
-      <div className="rounded-xl border bg-grey-light p-6 mb-8">
-        <h2 className="font-bold text-xl mb-4">Was ist enthalten</h2>
-        <ul className="space-y-2">
+      <div className="border border-border bg-grey-light p-5 mb-6">
+        <h2 className="font-bold text-lg mb-3">Was ist enthalten</h2>
+        <ul className="space-y-1.5 list-disc pl-5">
           {included.map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <Check className="h-5 w-5 text-red-accent mt-0.5 shrink-0" />
-              <span>{item}</span>
-            </li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </div>
 
-      <p className="text-center text-lg font-semibold mb-6">
-        Kostenvoranschlag kostenlos & unverbindlich.
-      </p>
+      {prices && prices.length > 0 && (
+        <PriceTable rows={prices} caption="Preisübersicht" />
+      )}
 
-      <div className="flex flex-wrap justify-center gap-3">
-        <a
-          href={CONTACT.phoneHref}
-          className="inline-flex items-center gap-2 rounded-md bg-red-accent px-6 py-3 font-semibold text-red-accent-foreground hover:opacity-90"
-        >
-          <Phone className="h-5 w-5" /> Jetzt anrufen
-        </a>
-        <Link
-          to="/kontakt"
-          className="inline-flex items-center gap-2 rounded-md border-2 border-dark px-6 py-3 font-semibold hover:bg-dark hover:text-dark-foreground transition"
-        >
-          Termin vereinbaren <ArrowRight className="h-5 w-5" />
-        </Link>
+      <div className="border-t border-border pt-5 mt-6">
+        <p className="font-semibold mb-3">
+          Kostenvoranschlag kostenlos & unverbindlich.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={CONTACT.phoneHref}
+            className="inline-flex items-center gap-2 rounded-sm bg-red-accent px-5 py-2.5 font-semibold text-red-accent-foreground hover:opacity-90"
+          >
+            <Phone className="h-4 w-4" /> Jetzt anrufen
+          </a>
+          <Link
+            to="/kontakt"
+            className="inline-flex items-center gap-2 rounded-sm border-2 border-dark px-5 py-2.5 font-semibold hover:bg-dark hover:text-dark-foreground transition"
+          >
+            Termin vereinbaren <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </div>
   );

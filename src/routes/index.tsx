@@ -122,12 +122,12 @@ function Index() {
             Klicken Sie auf eine Leistung für weitere Informationen.
           </p>
         </div>
-        <ul className="divide-y border rounded-lg bg-card">
+        <ul className="divide-y border bg-card">
           {previewServices.map((s) => (
             <li key={s.to}>
               <Link
                 to={s.to}
-                className="flex items-center justify-between gap-4 px-5 py-4 hover:bg-grey-light transition"
+                className="flex items-center justify-between gap-4 px-4 py-3 hover:bg-grey-light transition"
               >
                 <span className="font-medium">{s.title}</span>
                 <ArrowRight className="h-4 w-4 text-red-accent shrink-0" />
@@ -191,7 +191,7 @@ function Index() {
       <section className="border-t bg-grey-light">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Häufige Fragen</h2>
-          <Accordion type="single" collapsible className="bg-background rounded-lg border px-5">
+          <Accordion type="single" collapsible className="bg-background border px-5">
             <AccordionItem value="q1">
               <AccordionTrigger>Welche Marken reparieren Sie?</AccordionTrigger>
               <AccordionContent>

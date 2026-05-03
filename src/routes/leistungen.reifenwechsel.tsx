@@ -24,6 +24,13 @@ export const Route = createFileRoute("/leistungen/reifenwechsel")({
         "Reifeneinlagerung im Saisonpaket möglich",
         "Beratung bei Reifenneukauf",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Reifenwechsel (4 Räder, auf Felge)", price: "ab XX €" },
+        { label: "Reifenwechsel inkl. Wuchten", price: "ab XX €" },
+        { label: "Reifeneinlagerung pro Saison", price: "ab XX €" },
+        { label: "Neuer Reifensatz inkl. Montage", price: "auf Anfrage" },
+      ]}
     />
   ),
 });

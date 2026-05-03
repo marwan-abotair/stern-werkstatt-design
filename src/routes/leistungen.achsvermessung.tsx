@@ -22,6 +22,11 @@ export const Route = createFileRoute("/leistungen/achsvermessung")({
         "Justierung der Einstellungen",
         "Detailliertes Messprotokoll",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Achsvermessung (4 Räder)", price: "ab XX €" },
+        { label: "Achsvermessung inkl. Justierung", price: "ab XX €" },
+      ]}
     />
   ),
 });

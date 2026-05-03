@@ -24,6 +24,13 @@ export const Route = createFileRoute("/leistungen/klimaanlage")({
         "Desinfektion des Verdampfers",
         "Funktionstest und Kühlleistungsmessung",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Klimaanlagen-Service R134a", price: "ab XX €" },
+        { label: "Klimaanlagen-Service R1234yf", price: "ab XX €" },
+        { label: "Klimaanlagen-Desinfektion", price: "ab XX €" },
+        { label: "Innenraumfilter wechseln", price: "ab XX €" },
+      ]}
     />
   ),
 });

@@ -23,6 +23,12 @@ export const Route = createFileRoute("/leistungen/hu-au")({
         "Plakette nach bestandener HU",
         "Beratung bei Mängeln und schnelle Reparatur",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "HU/AU PKW", price: "auf Anfrage" },
+        { label: "Vorab-Check vor HU", price: "ab XX €" },
+        { label: "Nachuntersuchung", price: "auf Anfrage" },
+      ]}
     />
   ),
 });

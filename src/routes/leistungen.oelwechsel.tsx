@@ -24,6 +24,13 @@ export const Route = createFileRoute("/leistungen/oelwechsel")({
         "Prüfung weiterer Flüssigkeitsstände",
         "Reset der Wartungsanzeige",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Ölwechsel Kleinwagen inkl. Öl & Filter", price: "ab XX €" },
+        { label: "Ölwechsel Mittelklasse inkl. Öl & Filter", price: "ab XX €" },
+        { label: "Ölwechsel SUV / Oberklasse", price: "ab XX €" },
+        { label: "Zusatz: Innenraumfilter wechseln", price: "ab XX €" },
+      ]}
     />
   ),
 });
