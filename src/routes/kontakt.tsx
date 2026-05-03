@@ -129,7 +129,7 @@ function KontaktPage() {
             </p>
           </div>
 
-          <div className="rounded-xl overflow-hidden border">
+          <div className="rounded-sm overflow-hidden border">
             <iframe
               title="Karte zur Werkstatt"
               src="https://www.google.com/maps?q=Ordensmeisterstra%C3%9Fe+35,+12099+Berlin&output=embed"
@@ -141,11 +141,23 @@ function KontaktPage() {
             />
           </div>
 
+          <p className="text-sm">
+            Sie erreichen uns auch per WhatsApp: <strong>{CONTACT.whatsappDisplay}</strong>
+          </p>
+          <a
+            href={CONTACT.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-sm bg-whatsapp px-6 py-3 font-semibold text-white hover:opacity-90"
+          >
+            <MessageCircle className="h-5 w-5" /> WhatsApp schreiben
+          </a>
+
           <a
             href={CONTACT.mapsLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-md border-2 border-dark px-6 py-3 font-semibold hover:bg-dark hover:text-dark-foreground transition"
+            className="flex items-center justify-center gap-2 rounded-sm border-2 border-dark px-6 py-3 font-semibold hover:bg-dark hover:text-dark-foreground transition"
           >
             <Map className="h-5 w-5" /> Route berechnen
           </a>
