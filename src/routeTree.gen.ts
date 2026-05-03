@@ -16,6 +16,13 @@ import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
+import { Route as LeistungenUnfallreparaturRouteImport } from './routes/leistungen.unfallreparatur'
+import { Route as LeistungenReifenwechselRouteImport } from './routes/leistungen.reifenwechsel'
+import { Route as LeistungenOelwechselRouteImport } from './routes/leistungen.oelwechsel'
+import { Route as LeistungenKlimaanlageRouteImport } from './routes/leistungen.klimaanlage'
+import { Route as LeistungenHuAuRouteImport } from './routes/leistungen.hu-au'
+import { Route as LeistungenBremsenserviceRouteImport } from './routes/leistungen.bremsenservice'
+import { Route as LeistungenAchsvermessungRouteImport } from './routes/leistungen.achsvermessung'
 
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
@@ -52,6 +59,44 @@ const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
   path: '/leistungen/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeistungenUnfallreparaturRoute =
+  LeistungenUnfallreparaturRouteImport.update({
+    id: '/leistungen/unfallreparatur',
+    path: '/leistungen/unfallreparatur',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LeistungenReifenwechselRoute = LeistungenReifenwechselRouteImport.update({
+  id: '/leistungen/reifenwechsel',
+  path: '/leistungen/reifenwechsel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenOelwechselRoute = LeistungenOelwechselRouteImport.update({
+  id: '/leistungen/oelwechsel',
+  path: '/leistungen/oelwechsel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenKlimaanlageRoute = LeistungenKlimaanlageRouteImport.update({
+  id: '/leistungen/klimaanlage',
+  path: '/leistungen/klimaanlage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenHuAuRoute = LeistungenHuAuRouteImport.update({
+  id: '/leistungen/hu-au',
+  path: '/leistungen/hu-au',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenBremsenserviceRoute =
+  LeistungenBremsenserviceRouteImport.update({
+    id: '/leistungen/bremsenservice',
+    path: '/leistungen/bremsenservice',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LeistungenAchsvermessungRoute =
+  LeistungenAchsvermessungRouteImport.update({
+    id: '/leistungen/achsvermessung',
+    path: '/leistungen/achsvermessung',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,6 +105,13 @@ export interface FileRoutesByFullPath {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
+  '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
+  '/leistungen/hu-au': typeof LeistungenHuAuRoute
+  '/leistungen/klimaanlage': typeof LeistungenKlimaanlageRoute
+  '/leistungen/oelwechsel': typeof LeistungenOelwechselRoute
+  '/leistungen/reifenwechsel': typeof LeistungenReifenwechselRoute
+  '/leistungen/unfallreparatur': typeof LeistungenUnfallreparaturRoute
   '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +121,13 @@ export interface FileRoutesByTo {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
+  '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
+  '/leistungen/hu-au': typeof LeistungenHuAuRoute
+  '/leistungen/klimaanlage': typeof LeistungenKlimaanlageRoute
+  '/leistungen/oelwechsel': typeof LeistungenOelwechselRoute
+  '/leistungen/reifenwechsel': typeof LeistungenReifenwechselRoute
+  '/leistungen/unfallreparatur': typeof LeistungenUnfallreparaturRoute
   '/leistungen': typeof LeistungenIndexRoute
 }
 export interface FileRoutesById {
@@ -79,6 +138,13 @@ export interface FileRoutesById {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/leistungen/achsvermessung': typeof LeistungenAchsvermessungRoute
+  '/leistungen/bremsenservice': typeof LeistungenBremsenserviceRoute
+  '/leistungen/hu-au': typeof LeistungenHuAuRoute
+  '/leistungen/klimaanlage': typeof LeistungenKlimaanlageRoute
+  '/leistungen/oelwechsel': typeof LeistungenOelwechselRoute
+  '/leistungen/reifenwechsel': typeof LeistungenReifenwechselRoute
+  '/leistungen/unfallreparatur': typeof LeistungenUnfallreparaturRoute
   '/leistungen/': typeof LeistungenIndexRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +156,13 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
+    | '/leistungen/achsvermessung'
+    | '/leistungen/bremsenservice'
+    | '/leistungen/hu-au'
+    | '/leistungen/klimaanlage'
+    | '/leistungen/oelwechsel'
+    | '/leistungen/reifenwechsel'
+    | '/leistungen/unfallreparatur'
     | '/leistungen/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +172,13 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
+    | '/leistungen/achsvermessung'
+    | '/leistungen/bremsenservice'
+    | '/leistungen/hu-au'
+    | '/leistungen/klimaanlage'
+    | '/leistungen/oelwechsel'
+    | '/leistungen/reifenwechsel'
+    | '/leistungen/unfallreparatur'
     | '/leistungen'
   id:
     | '__root__'
@@ -108,6 +188,13 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/ueber-uns'
+    | '/leistungen/achsvermessung'
+    | '/leistungen/bremsenservice'
+    | '/leistungen/hu-au'
+    | '/leistungen/klimaanlage'
+    | '/leistungen/oelwechsel'
+    | '/leistungen/reifenwechsel'
+    | '/leistungen/unfallreparatur'
     | '/leistungen/'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +205,13 @@ export interface RootRouteChildren {
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   UeberUnsRoute: typeof UeberUnsRoute
+  LeistungenAchsvermessungRoute: typeof LeistungenAchsvermessungRoute
+  LeistungenBremsenserviceRoute: typeof LeistungenBremsenserviceRoute
+  LeistungenHuAuRoute: typeof LeistungenHuAuRoute
+  LeistungenKlimaanlageRoute: typeof LeistungenKlimaanlageRoute
+  LeistungenOelwechselRoute: typeof LeistungenOelwechselRoute
+  LeistungenReifenwechselRoute: typeof LeistungenReifenwechselRoute
+  LeistungenUnfallreparaturRoute: typeof LeistungenUnfallreparaturRoute
   LeistungenIndexRoute: typeof LeistungenIndexRoute
 }
 
@@ -172,6 +266,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeistungenIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leistungen/unfallreparatur': {
+      id: '/leistungen/unfallreparatur'
+      path: '/leistungen/unfallreparatur'
+      fullPath: '/leistungen/unfallreparatur'
+      preLoaderRoute: typeof LeistungenUnfallreparaturRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/reifenwechsel': {
+      id: '/leistungen/reifenwechsel'
+      path: '/leistungen/reifenwechsel'
+      fullPath: '/leistungen/reifenwechsel'
+      preLoaderRoute: typeof LeistungenReifenwechselRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/oelwechsel': {
+      id: '/leistungen/oelwechsel'
+      path: '/leistungen/oelwechsel'
+      fullPath: '/leistungen/oelwechsel'
+      preLoaderRoute: typeof LeistungenOelwechselRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/klimaanlage': {
+      id: '/leistungen/klimaanlage'
+      path: '/leistungen/klimaanlage'
+      fullPath: '/leistungen/klimaanlage'
+      preLoaderRoute: typeof LeistungenKlimaanlageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/hu-au': {
+      id: '/leistungen/hu-au'
+      path: '/leistungen/hu-au'
+      fullPath: '/leistungen/hu-au'
+      preLoaderRoute: typeof LeistungenHuAuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/bremsenservice': {
+      id: '/leistungen/bremsenservice'
+      path: '/leistungen/bremsenservice'
+      fullPath: '/leistungen/bremsenservice'
+      preLoaderRoute: typeof LeistungenBremsenserviceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/achsvermessung': {
+      id: '/leistungen/achsvermessung'
+      path: '/leistungen/achsvermessung'
+      fullPath: '/leistungen/achsvermessung'
+      preLoaderRoute: typeof LeistungenAchsvermessungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -182,6 +325,13 @@ const rootRouteChildren: RootRouteChildren = {
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   UeberUnsRoute: UeberUnsRoute,
+  LeistungenAchsvermessungRoute: LeistungenAchsvermessungRoute,
+  LeistungenBremsenserviceRoute: LeistungenBremsenserviceRoute,
+  LeistungenHuAuRoute: LeistungenHuAuRoute,
+  LeistungenKlimaanlageRoute: LeistungenKlimaanlageRoute,
+  LeistungenOelwechselRoute: LeistungenOelwechselRoute,
+  LeistungenReifenwechselRoute: LeistungenReifenwechselRoute,
+  LeistungenUnfallreparaturRoute: LeistungenUnfallreparaturRoute,
   LeistungenIndexRoute: LeistungenIndexRoute,
 }
 export const routeTree = rootRouteImport
