@@ -24,6 +24,13 @@ export const Route = createFileRoute("/leistungen/bremsenservice")({
         "Funktionsprüfung nach Reparatur",
         "Probefahrt zur Endkontrolle",
       ]}
+      prices={[
+        // TODO: Add real prices
+        { label: "Bremsbeläge vorne (inkl. Einbau)", price: "ab XX €" },
+        { label: "Bremsbeläge hinten (inkl. Einbau)", price: "ab XX €" },
+        { label: "Bremsscheiben vorne (Paar)", price: "ab XX €" },
+        { label: "Bremsflüssigkeit wechseln", price: "ab XX €" },
+      ]}
     />
   ),
 });
