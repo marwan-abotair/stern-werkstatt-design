@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Award, Search, Wrench } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
 
 const title = "Über uns | Meisterwerkstatt Stern Berlin-Tempelhof";
@@ -19,38 +18,61 @@ export const Route = createFileRoute("/ueber-uns")({
   component: UeberUnsPage,
 });
 
-const pillars = [
-  { icon: Award, title: "Meisterbetrieb", desc: "Geprüfte Qualität nach Meisterstandard." },
-  { icon: Search, title: "Transparenz", desc: "Klare Kommunikation und faire Kostenvoranschläge." },
-  { icon: Wrench, title: "Erfahrung & Qualität", desc: "Langjährige Erfahrung an allen Marken." },
+const reasons = [
+  "Meisterbetrieb seit JAHR EINTRAGEN", // TODO: Gründungsjahr eintragen
+  "Alle Marken und Modelle",
+  "Kostenloser Kostenvoranschlag",
+  "Faire und transparente Preise",
+  "Kurze Wartezeiten",
+  "Parkplätze direkt vor der Tür",
 ];
 
 function UeberUnsPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 md:py-16">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6">
+    <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
+      <h1 className="text-2xl md:text-3xl font-bold mb-3 border-b-2 border-red-accent pb-2">
         Über uns – Meisterwerkstatt Stern Berlin
       </h1>
-      <p className="text-lg leading-relaxed text-muted-foreground mb-10">
-        Als KFZ-Meisterbetrieb in Berlin-Tempelhof stehen wir für faire Preise, höchste Transparenz
-        und professionelle Arbeit an allen Marken und Modellen. Kunden aus Tempelhof, Neukölln,
-        Kreuzberg, Mariendorf und Schöneberg vertrauen auf unsere Erfahrung.
+      <p className="leading-relaxed text-muted-foreground mb-8 max-w-3xl">
+        Als KFZ-Meisterbetrieb in Berlin-Tempelhof stehen wir für faire Preise, höchste
+        Transparenz und professionelle Arbeit an allen Marken und Modellen. Kunden aus
+        Tempelhof, Neukölln, Kreuzberg, Mariendorf und Schöneberg vertrauen auf unsere
+        Erfahrung.
       </p>
 
-      <div className="grid gap-6 sm:grid-cols-3 mb-12">
-        {pillars.map((p) => (
-          <div key={p.title} className="rounded-xl border bg-card p-6 text-center">
-            <p.icon className="h-10 w-10 text-red-accent mx-auto mb-3" />
-            <h2 className="font-bold text-lg mb-2">{p.title}</h2>
-            <p className="text-sm text-muted-foreground">{p.desc}</p>
-          </div>
-        ))}
+      <h2 className="text-xl font-bold mb-4 border-b border-border pb-1">Warum zu uns?</h2>
+      <div className="grid gap-8 md:grid-cols-2 mb-10">
+        <div className="space-y-3 leading-relaxed">
+          <p>
+            Wir sind ein traditioneller, inhabergeführter Handwerksbetrieb in Berlin-Tempelhof.
+            Bei uns kümmern sich erfahrene Kfz-Meister persönlich um Ihr Fahrzeug – ohne
+            anonyme Hotline und ohne Aufschwatzen unnötiger Reparaturen.
+          </p>
+          <p>
+            Wir arbeiten an allen Marken und Modellen, vom Kleinwagen bis zum SUV. Sie erhalten
+            vorab einen verbindlichen Kostenvoranschlag und werden über jeden weiteren Schritt
+            informiert. So wissen Sie immer, was passiert und was es kostet.
+          </p>
+          <p>
+            Unsere Werkstatt liegt verkehrsgünstig in der Ordensmeisterstraße 35, mit
+            kostenlosen Parkplätzen direkt vor der Tür. Termine sind in der Regel kurzfristig
+            verfügbar.
+          </p>
+        </div>
+        <ul className="space-y-2">
+          {reasons.map((r) => (
+            <li key={r} className="flex items-start gap-2 border-b border-border pb-2">
+              <span className="text-red-accent font-bold mt-0.5">✓</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <div className="text-center">
+      <div>
         <Link
           to="/kontakt"
-          className="inline-flex items-center gap-2 rounded-md bg-red-accent px-6 py-3 font-semibold text-red-accent-foreground hover:opacity-90"
+          className="inline-flex items-center gap-2 rounded-sm bg-red-accent px-5 py-2.5 font-semibold text-red-accent-foreground hover:opacity-90"
         >
           Kontakt aufnehmen
         </Link>
